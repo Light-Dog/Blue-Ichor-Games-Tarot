@@ -22,6 +22,10 @@ public class WaveSpawner : MonoBehaviour
     public TMP_Text livesText;
     public TMP_Text moneyText;
 
+    public TMP_Text woodText;
+    public TMP_Text stoneText;
+    public TMP_Text ironText;
+
     //name, prefab, num to spawn, rate to spwan them, spawnLocations[]
     [System.Serializable]
     public class Wave
@@ -47,6 +51,9 @@ public class WaveSpawner : MonoBehaviour
         waveText.text = roundIndex.ToString();
         livesText.text = PlayerStats.Lives.ToString();
         moneyText.text = PlayerStats.Money.ToString();
+        woodText.text = PlayerStats.Wood.ToString();
+        ironText.text = PlayerStats.Iron.ToString();
+        stoneText.text = PlayerStats.Stone.ToString();
 
         //if waiting, GOES TO NEXT WAVE WHEN ALL ENEMIES ARE DEAD
         //if they are, Complete the wave, otherwise return
