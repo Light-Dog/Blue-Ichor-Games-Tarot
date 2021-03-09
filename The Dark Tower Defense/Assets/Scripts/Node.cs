@@ -7,13 +7,17 @@ public class Node : MonoBehaviour
     public Color hoverColor;
     public Transform offset;
 
+    [Header("Resource Zone")]
+    public bool hasResource = false;
+    public Resource resouce;
+    //link to text object
+
     [Header("Optional")]
     public GameObject turret;
 
+    //cacheing data
     private Renderer rend;
     private Color startColor;
-
-    //cacheing data
     private BuildManager buildManger;
 
     private void Start()
@@ -26,6 +30,11 @@ public class Node : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if(hasResource)
+        {
+
+        }
+
         if (!buildManger.CanBuild)
             return;
 
@@ -39,6 +48,14 @@ public class Node : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        if (hasResource)
+        {
+            if(PlayerStats.Lives > 1)
+            {
+                rend.material.color = resouce.resouceHoverColor;
+            }
+        }
+
         if (!buildManger.CanBuild)
             return;
 
