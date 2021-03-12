@@ -5,6 +5,7 @@ using UnityEngine;
 public class Turret : MonoBehaviour
 {
     private Transform target;
+    private Enemy targetEnemy;
 
     [Header("Attributes")]
     public float range = 10f;
@@ -16,6 +17,10 @@ public class Turret : MonoBehaviour
 
     [Header("Use Lazer")]
     public bool useLazer = false;
+
+    public int damageOverTime = 30;
+    public float slowPct = .5f;
+
     public LineRenderer lineRenderer;
     public ParticleSystem impactParticles;
 
@@ -82,7 +87,10 @@ public class Turret : MonoBehaviour
         }
 
         if (nearestEnemy != null && shortestDistane <= range)
+        {
             target = nearestEnemy.transform;
+            targetEnemy = nearestEnemy.GetComponent<Enemy>();
+        }
         else
             target = null;
     }
@@ -106,6 +114,9 @@ public class Turret : MonoBehaviour
 
     void Lazer()
     {
+        targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
+        targetEnemy.Slow(slowPct);
+
         if (lineRenderer.enabled == false)
         {
             lineRenderer.enabled = true;

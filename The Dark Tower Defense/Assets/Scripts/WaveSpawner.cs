@@ -127,6 +127,8 @@ public class WaveSpawner : MonoBehaviour
     {
         currentState = SpawnState.Spawning;
 
+        PlayerStats.Rounds++;
+
         for(int i = 0; i < _wave.numToSpawn; i++)
         {
             SpawnEnemy(_wave);

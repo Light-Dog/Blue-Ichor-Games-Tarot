@@ -10,6 +10,8 @@ public class PlayerStats : MonoBehaviour
     public static int Lives;
     public int startLives = 20;
 
+    public static int Rounds;
+
     public static int Wood;
     public int startWood = 5;
     public static int Stone;
@@ -25,6 +27,8 @@ public class PlayerStats : MonoBehaviour
     {
         Money = startMoney;
         Lives = startLives;
+
+        Rounds = 0;
 
         Wood = 0;
         Stone = 0;

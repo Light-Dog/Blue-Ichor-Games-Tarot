@@ -56,13 +56,14 @@ public class Node : MonoBehaviour
             return;
         }
 
-        if (!buildManger.CanBuild)
-            return;
-
         if(turret != null)
         {
             Debug.Log("Turrent Already built here!");
+            buildManger.SelectNode(this);
         }
+
+        if (!buildManger.CanBuild)
+            return;
 
         buildManger.BuildTurretOn(this);
     }
