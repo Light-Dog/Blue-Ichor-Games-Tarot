@@ -21,6 +21,7 @@ public class BuildManager : MonoBehaviour
     public NodeUI nodeUI;
 
     public GameObject buildEffect;
+    public GameObject sellEffect;
 
     public bool CanBuild { get { return turretToBuild != null; } }
     public bool CanAfford { get { return turretToBuild.cost <= PlayerStats.Money; } }

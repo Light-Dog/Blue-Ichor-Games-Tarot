@@ -8,6 +8,7 @@ public class NodeUI : MonoBehaviour
     public GameObject ui;
 
     public Text cost;
+    public Text sellCost;
     public Button upgradeButton;
 
     private Node target;
@@ -18,10 +19,18 @@ public class NodeUI : MonoBehaviour
         BuildManager.instance.DeselectNode();
     }
 
+    public void Sell()
+    {
+        target.SellTurret();
+        BuildManager.instance.DeselectNode();
+    }
+
     public void SelectTarget(Node node)
     {
         target = node;
         transform.position = target.offset.position;
+
+        sellCost.text = "$" + target.turretBlueprint.GetSellAmount();
 
         if(!target.turretBlueprint.upgraded)
         {

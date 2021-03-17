@@ -11,4 +11,9 @@ public class TurretBlueprint
     public GameObject upgradedPrefab;
     public int upgradeCost = 0;
     public bool upgraded = false;
+
+    public int GetSellAmount()
+    {
+        return (cost / 2);
+    }
 }
