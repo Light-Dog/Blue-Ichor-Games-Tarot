@@ -2959,12 +2959,21 @@ MonoBehaviour:
   standardTarget:
     turretPrefab: {fileID: 7398512913460034553, guid: 934adf96b11922043b830d41a8660a3c, type: 3}
     cost: 100
+    upgradedPrefab: {fileID: 0}
+    upgradeCost: 0
+    upgraded: 0
   missileLauncher:
     turretPrefab: {fileID: 6821704017986188079, guid: 963e03e3cce9afa43936204439a8dbea, type: 3}
     cost: 250
+    upgradedPrefab: {fileID: 0}
+    upgradeCost: 0
+    upgraded: 0
   lazerBeam:
     turretPrefab: {fileID: 7279614225191924432, guid: da11d7c4ae0260e43809c64e9508b608, type: 3}
     cost: 500
+    upgradedPrefab: {fileID: 0}
+    upgradeCost: 0
+    upgraded: 0
 --- !u!114 &840275398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5425,6 +5434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261478d2f6b95db48bc2e4e4284a5d58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverUI: {fileID: 0}
 --- !u!114 &1569345589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5439,6 +5449,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startMoney: 500
   startLives: 20
+  startWood: 5
+  startStone: 5
+  startIron: 0
+  worker: {fileID: 0}
+  HQ: {fileID: 0}
 --- !u!114 &1569345590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5451,7 +5466,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f3f6c7a928d76344b814ce3d1507223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nodeUI: {fileID: 0}
   buildEffect: {fileID: 3458144806351798404, guid: 2f7bfd4c0c9a7714cb673e0f144589df, type: 3}
+  sellEffect: {fileID: 0}
 --- !u!114 &1569345591 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3753526292548162465, guid: 9f27e9351de93164c88145090ea61aa8, type: 3}
