@@ -10,6 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3753526292548162464}
   - component: {fileID: 3753526292548162465}
+  - component: {fileID: 1641582555230879015}
+  - component: {fileID: 7010172527124856666}
+  - component: {fileID: 4877725433330178503}
+  - component: {fileID: 3129769618246364543}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -44,24 +48,70 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenWaves: 5
-  waveList:
-  - name: Simple As 123
-    enemy: {fileID: 1168702550229254515, guid: 39861f790004141439fe40941c130114, type: 3}
-    numToSpawn: 5
-    spawnRate: 1
-    spawnLocations:
-    - {fileID: 0}
-  - name: Fast Lads
-    enemy: {fileID: 1168702550229254515, guid: 39861f790004141439fe40941c130114, type: 3}
-    numToSpawn: 4
-    spawnRate: 5
-    spawnLocations:
-    - {fileID: 0}
-  - name: Take your Time
-    enemy: {fileID: 1168702550229254515, guid: 39861f790004141439fe40941c130114, type: 3}
-    numToSpawn: 20
-    spawnRate: 20
-    spawnLocations:
-    - {fileID: 0}
+  roundList: []
   waveText: {fileID: 0}
-  countdownText: {fileID: 0}
+  livesText: {fileID: 0}
+  moneyText: {fileID: 0}
+  woodText: {fileID: 0}
+  stoneText: {fileID: 0}
+  ironText: {fileID: 0}
+--- !u!114 &1641582555230879015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3753526292548162495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d136c36947e0c944b95f6531eb7088e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ui: {fileID: 0}
+--- !u!114 &7010172527124856666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3753526292548162495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f3f6c7a928d76344b814ce3d1507223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeUI: {fileID: 0}
+  buildEffect: {fileID: 3458144806351798404, guid: 2f7bfd4c0c9a7714cb673e0f144589df, type: 3}
+  sellEffect: {fileID: 3458144806351798404, guid: cadea5954c07b3146b8be4d1dddface4, type: 3}
+--- !u!114 &4877725433330178503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3753526292548162495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c1e0983799e06c4982c108fb082c8c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startMoney: 500
+  startLives: 20
+  startWood: 2
+  startStone: 2
+  startIron: 0
+  worker: {fileID: 1242746330980377308, guid: 3411d5aa0384f3248abe0a901ba665f6, type: 3}
+  HQ: {fileID: 0}
+--- !u!114 &3129769618246364543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3753526292548162495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 261478d2f6b95db48bc2e4e4284a5d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverUI: {fileID: 0}
