@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TowerMenu : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class TowerMenu : MonoBehaviour
     public bool lookingLeft = true;
 
     public Transform partToRotate;
+    public GameObject buildEffect;
 
     public float spinSpeed = 15f;
 
@@ -30,18 +32,26 @@ public class TowerMenu : MonoBehaviour
         right = partToRotate.rotation;
 
         target = left;
+
+        GameObject effect = (GameObject)Instantiate(buildEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 1.5f);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-            SwitchSides();
-
         partToRotate.rotation = Quaternion.Lerp(partToRotate.rotation, target, Time.deltaTime * spinSpeed);
         
     }
 
-    void SwitchSides()
+    public void UpdateTower(bool left)
+    {
+        if (!lookingLeft && left)
+            SwitchSides();
+        else if (!left && lookingLeft)
+            SwitchSides();
+    }
+
+    public void SwitchSides()
     {
         if (lookingLeft)
         {

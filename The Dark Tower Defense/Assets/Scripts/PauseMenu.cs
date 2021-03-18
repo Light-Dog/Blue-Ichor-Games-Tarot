@@ -32,6 +32,7 @@ public class PauseMenu : MonoBehaviour
     public void Menu()
     {
         ToggleMenu();
+        SceneManager.LoadScene("Menu", LoadSceneMode.Single);
         Debug.Log("Go TO Menu");
     }
 }
