@@ -5,11 +5,13 @@ using TMPro;
 
 public class WaveSpawner : MonoBehaviour
 {
+    public static int enemiesAlive = 0;
+
     //enum spwanstate {spawn, wait, count}
     public enum SpawnState { Spawning, Waiting, CountingDown }
 
     //timer for enemey check, timer between waves, timer for between waves, 
-    public float timeBetweenWaves = 5f;
+    public float timeBetweenWaves = 2f;
     private float enemyCheckCooldown = 1f;
     private float waveCooldown;
 
@@ -34,7 +36,6 @@ public class WaveSpawner : MonoBehaviour
 
         public GameObject enemy;
         public int numToSpawn;
-
         public float timeBetweenSpawn;
 
         public Transform[] spawnLocations;
@@ -59,13 +60,12 @@ public class WaveSpawner : MonoBehaviour
         //if they are, Complete the wave, otherwise return
         if (currentState == SpawnState.Waiting)
         {
-            if (EnemyCheck())
+            if (enemiesAlive <= 0)
             {
                 CompleteWave();
             }
             else
             {
-                //print("Waiting");
                 return;
             }
         }
@@ -152,6 +152,7 @@ public class WaveSpawner : MonoBehaviour
             spawnLocation = _wave.spawnLocations[0];
 
         Instantiate(_wave.enemy, spawnLocation.position, spawnLocation.rotation);
+        enemiesAlive++;
     }
 
     //----------------------------------------------------------------------------------------------------------------------
